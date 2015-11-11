@@ -42,16 +42,6 @@ class Module implements ModuleDefinitionInterface
         $config = include APP_PATH . "/apps/frontend/config/config.php";
 
         /**
-         * Setting up the view component
-         */
-        $di['view'] = function () {
-            $view = new View();
-            $view->setViewsDir(__DIR__ . '/views/');
-
-            return $view;
-        };
-
-        /**
          * Database connection is created based in the parameters defined in the configuration file
          */
         $di['db'] = function () use ($config) {

@@ -51,6 +51,8 @@ $di->setShared('view', function () use ($config) {
 
     $view->registerEngines(array(
         '.volt' => function ($view, $di) use ($config) {
+            $view->setLayoutsDir( '/layouts/' );
+            $view->setTemplateAfter('main');
 
             $volt = new VoltEngine($view, $di);
 
