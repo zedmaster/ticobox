@@ -12,5 +12,7 @@ nbproject
 .project
 .settings
 composer.lock
+composer.phar
 vendor/bin
 cache/*
+vendor/*

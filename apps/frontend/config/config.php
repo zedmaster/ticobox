@@ -16,6 +16,7 @@ return new \Phalcon\Config(array(
         'viewsDir'       => __DIR__ . '/../views/',
         'cacheDir'       => __DIR__ . '/../../../cache/volt/',
         'layoutDir'      => __DIR__ . '/../views/layout',
-        'baseUri'        => '/Ticobox/'
+        //'baseUri'        => '/Ticobox/'
+        'baseUri'        => '/'
     )
 ));

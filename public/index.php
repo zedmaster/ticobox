@@ -13,6 +13,13 @@ try {
      */
     $config = include APP_PATH . "/apps/frontend/config/config.php";
 
+
+    /**
+     * Include  loaders
+     */
+    require __DIR__ . '/../config/loader.php';
+
+
     /**
      * Include services
      */
@@ -32,6 +39,9 @@ try {
      * Include routes
      */
     require __DIR__ . '/../config/routes.php';
+
+
+
 
     echo $application->handle()->getContent();
 

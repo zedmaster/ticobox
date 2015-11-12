@@ -107,3 +107,14 @@ $di->setShared('dispatcher', function() use ($di) {
     $dispatcher->setDefaultNamespace('Ticobox\Frontend\Controllers');
     return $dispatcher;
 });
+
+/**
+ * Set jQuery
+ */
+$di->set("jquery",function(){
+    $jquery= new Ajax\JsUtils(array("driver"=>"Jquery"));
+    $jquery->ui(new Ajax\JqueryUI());//optional for JQuery UI
+    $jquery->bootstrap(new Ajax\Bootstrap());//Optional for Twitter Bootstrap
+
+    return $jquery;
+});
