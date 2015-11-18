@@ -4,9 +4,9 @@ return new \Phalcon\Config(array(
     'database' => array(
         'adapter'  => 'Mysql',
         'host'     => 'localhost',
-        'username' => 'root',
-        'password' => '',
-        'dbname'   => 'test',
+        'username' => 'www',
+        'password' => 'tux',
+        'dbname'   => 'tico_box',
         'charset'  => 'utf8',
     ),
     'application' => array(
@@ -14,6 +14,7 @@ return new \Phalcon\Config(array(
         'modelsDir'      => __DIR__ . '/../models/',
         'migrationsDir'  => __DIR__ . '/../migrations/',
         'viewsDir'       => __DIR__ . '/../views/',
+        'formsDir'       => __DIR__ . '/../forms/',
         'cacheDir'       => __DIR__ . '/../../../cache/volt/',
         'layoutDir'      => __DIR__ . '/../views/layout',
         //'baseUri'        => '/Ticobox/'

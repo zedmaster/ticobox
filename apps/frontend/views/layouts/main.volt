@@ -5,7 +5,8 @@
     {{ get_title() }}
     {{ javascript_include('js/jquery.min.js') }}
     {{ javascript_include('js/jquery-ui.min.js') }}
-    {{ stylesheet_link('js/jquery-ui.css') }}
+    {{ javascript_include('js/jquery.maskedinput.min.js') }}
+    {{ stylesheet_link('css/jquery-ui.css') }}
     {{ javascript_include('js/bootstrap.min.js') }}
     {{ stylesheet_link('css/bootstrap.min.css') }}
     {{ stylesheet_link('css/style.css') }}
@@ -42,6 +43,7 @@
     </nav>
 
     <div class="container">
+
         {{ content() }}
 
         <hr>

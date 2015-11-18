@@ -24,6 +24,7 @@ class Module implements ModuleDefinitionInterface
         $loader->registerNamespaces(array(
             'Ticobox\Frontend\Controllers' => __DIR__ . '/controllers/',
             'Ticobox\Frontend\Models' => __DIR__ . '/models/',
+            'Ticobox\Frontend\Forms' => __DIR__ . '/forms/',
         ));
 
         $loader->register();
@@ -45,7 +46,7 @@ class Module implements ModuleDefinitionInterface
          * Database connection is created based in the parameters defined in the configuration file
          */
         $di['db'] = function () use ($config) {
-            return new DbAdapter($config->toArray());
+            return new DbAdapter($config->database->toArray());
         };
     }
 }

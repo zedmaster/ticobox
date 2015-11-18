@@ -118,3 +118,16 @@ $di->set("jquery",function(){
 
     return $jquery;
 });
+
+/**
+ * set flash
+ */
+$di->set('flash', function() {
+    $flash = new \Phalcon\Flash\Session([
+        'error' => 'alert alert-danger',
+        'success' => 'alert alert-success',
+        'notice' => 'alert alert-info',
+    ]);
+
+    return $flash;
+});

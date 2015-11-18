@@ -1,28 +1,14 @@
 <div class="row">
 
-    <div class="col-md">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Instruções</h3>
-            </div>
-            <div class="panel-body">
-                <p>Efetue o login utilizando a chave de acesso,  seu e-mail e senha, para acessar a Internet</p>
-
-            </div>
-        </div>
-    </div>
-
     {{ flash.output() }}
     <div class="col-md">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Login</h3>
+                <h3 class="panel-title">Cadastro</h3>
             </div>
 
-
-
             <p>
-            <form method="post" name="login" action="/index/auth" class="form-horizontal" role="form" id="login">
+            <form method="post" name="cadastro" action="/cadastro/save" class="form-horizontal" role="form" id="cadastro">
 
                     {% for element in form %}
                         <div class="form-group ">
@@ -37,3 +23,12 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    jQuery(function($){
+        $("#cpf").mask("999.999.999-99");
+        $("#telefone").mask("(99) 9999-9999?9");
+        $("#celular").mask("(99) 9999-9999?9");
+    });
+</script>
