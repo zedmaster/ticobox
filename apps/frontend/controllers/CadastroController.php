@@ -60,12 +60,5 @@ class CadastroController extends ControllerBase
     }
 
 
-
-    public function cadastroAction()
-    {
-        $form = new LoginForm;
-        $usuario = new Usuario;
-    }
-
 }
 

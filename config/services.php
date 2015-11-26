@@ -12,6 +12,12 @@ use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
+use Phalcon\Mvc\Dispatcher;
+use Phalcon\Events\Manager as EventsManager;
+use Core\Plugins\Security;
+use Core\Plugins\NotFound;
+use Core\Plugins\Auth;
+
 
 /**
  * The FactoryDefault Dependency Injector automatically registers the right services to provide a full stack framework
@@ -19,10 +25,27 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 $di = new FactoryDefault();
 
 /**
+ * Regitrar Config
+ */
+$di->set("config", function() use ($config) {
+    return $config;
+});
+
+
+
+/**
  * Registering a router
  */
-$di->setShared('router', function () {
+$di->setShared('router', function () use ($config){
     $router = new Router();
+
+    //var_dump($config->application->modules);die();
+
+    /**
+     * Include routes
+     */
+    require __DIR__ . '/../config/routes.php';
+
 
     $router->setDefaultModule('frontend');
     $router->setDefaultNamespace('Ticobox\Frontend\Controllers');
@@ -103,9 +126,31 @@ $di->setShared('session', function () {
 * Set the default namespace for dispatcher
 */
 $di->setShared('dispatcher', function() use ($di) {
-    $dispatcher = new Phalcon\Mvc\Dispatcher();
+    $eventsManager = new EventsManager;
+
+    /**
+     * Check if the user is allowed to access certain action using the SecurityPlugin
+     */
+    $eventsManager->attach('dispatch:beforeExecuteRoute', new Security);
+
+    /**
+     * Handle exceptions and not-found exceptions using NotFoundPlugin
+     */
+    $eventsManager->attach('dispatch:beforeException', new NotFound);
+
+    $dispatcher = new Dispatcher;
+    $dispatcher->setEventsManager($eventsManager);
     $dispatcher->setDefaultNamespace('Ticobox\Frontend\Controllers');
+
     return $dispatcher;
+});
+
+
+/**
+ * Custom authentication component
+ */
+$di->setShared('auth', function () {
+    return new Auth();
 });
 
 /**
@@ -131,3 +176,4 @@ $di->set('flash', function() {
 
     return $flash;
 });
+

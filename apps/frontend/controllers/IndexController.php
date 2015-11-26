@@ -2,9 +2,11 @@
 
 namespace Ticobox\Frontend\Controllers;
 
+use Phalcon\Exception;
 use Ticobox\Frontend\Forms\LoginForm;
 use Ticobox\Frontend\Forms\ClienteForm;
 use Ticobox\Frontend\Models\Usuario;
+
 
 
 class IndexController extends ControllerBase
@@ -32,11 +34,26 @@ class IndexController extends ControllerBase
 
 
         $data = $this->request->getPost();
+        $mensagens = Array();
 
 
         if (!$form->isValid($data)) {
-            foreach ($form->getMessages() as $message) {
-                $this->flash->error($message);
+
+            foreach ($form->getMessages() as $mensagem) {
+                $mensagens[] = $mensagem;
+            }
+        }else{
+
+            if(!$this->auth->check($data)){
+                foreach ($this->auth->getMessages() as $mensagem) {
+                    $mensagens[] = $mensagem;
+                }
+            }
+        }
+
+        if(count($mensagens)>0) {
+            foreach ($mensagens as $mensagem) {
+                $this->flash->error($mensagem);
             }
             return $this->dispatcher->forward(array(
                 "controller" => "index",
@@ -51,6 +68,10 @@ class IndexController extends ControllerBase
     }
 
 
+    public function errorAction()
+    {
+        throw new Exception("Teste de erro");
+    }
 
 }
 

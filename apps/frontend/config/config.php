@@ -18,6 +18,29 @@ return new \Phalcon\Config(array(
         'cacheDir'       => __DIR__ . '/../../../cache/volt/',
         'layoutDir'      => __DIR__ . '/../views/layout',
         //'baseUri'        => '/Ticobox/'
-        'baseUri'        => '/'
+        'baseUri'        => '/',
+        'modules' => array(
+                'frontend' => array(
+                'className' => 'Ticobox\Frontend\Module',
+                'path' => __DIR__ . '/../apps/frontend/Module.php'
+            )
+        )
+    ),
+    'pup' => array(
+        'redirect' => array(
+            'success' => '/painel',
+            'failure' => '/'
+        ),
+        'resources' => array(
+            'type' => 'private',
+            'resources' => array(
+                '*' => array(
+                    // All except
+                    'index' => array('index','auth'),
+                    'cadastro' => array('index','save')
+                )
+            )
+        )
     )
+
 ));

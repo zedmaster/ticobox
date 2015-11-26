@@ -177,15 +177,43 @@ class Usuario extends \Phalcon\Mvc\Model
     }
 
 
+    /**
+     * Retorna o login
+     *
+     * @param $parameters
+     * @return bool|\Phalcon\Mvc\Model
+     */
+    public static function findLogin($parameters)
+    {
+        $email = $parameters['email'];
+        $senha = $parameters['senha'];
+
+
+        $row = parent::findFirst([
+            'conditions' => 'email = ?1 AND senha = ?2 AND isdel = 0',
+            'bind' => [1 => $email, 2 => $senha]
+        ]);
+
+        if($row){
+            return $row;
+        }
+
+        return false;
+    }
+
+
+    /**
+     *
+     */
     public function beforeCreate()
     {
         $this->data_cadastro = date('Y-m-d H:i:s');
 
-
-
     }
 
-
+    /**
+     *
+     */
     public function beforeUpdate()
     {
         $this->data_atualizacao = date('Y-m-d H:i:s');

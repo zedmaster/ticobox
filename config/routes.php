@@ -1,8 +1,9 @@
 <?php
 
-$router = $di->get("router");
+//$router = $di->get("router");
 
-foreach ($application->getModules() as $key => $module) {
+//foreach ($application->getModules() as $key => $module) {
+foreach ($config->application->modules as $key => $module) {
     $namespace = str_replace('Module','Controllers', $module["className"]);
     $router->add('/'.$key.'/:params', array(
         'namespace' => $namespace,
@@ -27,4 +28,4 @@ foreach ($application->getModules() as $key => $module) {
     ));
 }
 
-$di->set("router", $router);
+//$di->set("router", $router);
