@@ -26,7 +26,6 @@ return new \Phalcon\Config(array(
             )
         )
     ),
-
     // Controle de acesso
     'acl' => array(
         'roles' => array(
@@ -60,6 +59,39 @@ return new \Phalcon\Config(array(
                 )
             ),
         )
+    ),
+    // Navigation
+    'navigation' => array(
+        'top' => array(
+            'class' => 'nav navbar-nav',
+            'id' => 'top-navigation',
+            'childs' => array(
+                array(
+                    'class' => 'glyphicon glyphicon-log-in',
+                    'url' => '/',
+                    'name' => 'Login',
+                    'module' => 'frontend',
+                    'controller' => 'index',
+                    'action' => 'index',
+
+                ),
+                array(
+                    'class' => 'glyphicon glyphicon-plus',
+                    'url' => '/cadastro',
+                    'name' => 'Cadastrar',
+                    'module' => 'frontend',
+                    'controller' => 'index',
+                    'action' => 'index',
+                ),
+                array(
+                    'class' => 'glyphicon glyphicon-log-out',
+                    'url' => '/index/logout',
+                    'name' => 'Logout',
+                    'module' => 'frontend',
+                    'controller' => 'index',
+                    'action' => 'logout',
+                ),
+            ))
     ),
 
 ));

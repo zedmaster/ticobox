@@ -17,6 +17,7 @@ use Phalcon\Events\Manager as EventsManager;
 use Core\Plugins\Security;
 use Core\Plugins\NotFound;
 use Core\Plugins\Auth;
+use Core\Navigation;
 
 
 /**
@@ -152,6 +153,14 @@ $di->setShared('dispatcher', function() use ($di) {
 $di->setShared('auth', function () {
     return new Auth();
 });
+
+/**
+ *  Custom navigation component
+ */
+$di->set('navigation', function () use ($config) {
+    return new Navigation($config->navigation);
+}, true);
+
 
 /**
  * Set jQuery

@@ -25,22 +25,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img src="/img/logox25.png" alt="TicoBox"/>&nbsp;</a>
+                <a class="navbar-brand" href="{{ identity['home'] }}"><img src="/img/logox25.png" alt="TicoBox"/>&nbsp;</a>
             </div>
             <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a class="nav-header" href="/"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                        </li>
-                        <li>
-                            <a class="nav-header" href="/cadastro"><span class="glyphicon glyphicon-plus"></span> Cadastrar</a>
-                        </li>
-                        <li>
-                            <a class="nav-header" href="/index/logout"><span class="glyphicon glyphicon-log-out"></span> Sair</a>
-                        </li>
-                    </ul>
-                </ul>
+                {{ navigation.toHtml('top') }}
                 <p class="navbar-text navbar-right">{{ identity['nome'] }}</p>
             </div><!--/.nav-collapse -->
         </div>
