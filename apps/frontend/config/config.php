@@ -26,21 +26,40 @@ return new \Phalcon\Config(array(
             )
         )
     ),
-    'pup' => array(
-        'redirect' => array(
-            'success' => '/painel',
-            'failure' => '/'
+
+    // Controle de acesso
+    'acl' => array(
+        'roles' => array(
+            'Visitante'   => null,
+            'Cliente' => null
+        ),
+        'home' => array(
+            'Visitante' => '/',
+            'Cliente'   => '/painel'
         ),
         'resources' => array(
-            'type' => 'private',
-            'resources' => array(
-                '*' => array(
-                    // All except
-                    'index' => array('index','auth'),
-                    'cadastro' => array('index','save')
+            'errors'    => array('show401', 'show404', 'show500'),
+            'index'     => array('index', 'auth', 'logout', 'teste','error'),
+            'cadastro'  => array('index', 'save'),
+            'painel'    => array('index'),
+        ),
+        'privilege' => array(
+            'Visitante' => array(
+                'allow' => array(
+                    'errors'     => array('show401', 'show404', 'show500'),
+                    'index'      => array('index', 'auth', 'teste','error'),
+                    'cadastro'   => array('index', 'save'),
                 )
-            )
+            ),
+            'Cliente' => array(
+                'allow' => array(
+                    'errors'    => array('show401', 'show404', 'show500'),
+                    'index'     => array('logout'),
+                    'painel'    => array('index'),
+
+                )
+            ),
         )
-    )
+    ),
 
 ));

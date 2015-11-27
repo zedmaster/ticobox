@@ -28,52 +28,39 @@ class Security extends Plugin
 		if (!isset($this->persistent->acl)) {
 
 			$acl = new AclList();
-
 			$acl->setDefaultAction(Acl::DENY);
 
+            $config = $this->getDI()->get('config')->acl;
+
+
 			//Register roles
-			$roles = array(
-				'Cliente'  => new Role('Cliente'),
-				'guests' => new Role('Guests')
-			);
-			foreach ($roles as $role) {
-				$acl->addRole($role);
-			}
+            foreach($config->roles as $role => $inheritance) {
+                $role = new Role($role);
+                if($acl->isRole($inheritance) && !is_null($inheritance)){
+                    $inheritance = new Role($inheritance);
+                }
+                $acl->addRole($role, $inheritance);
+            }
 
-			//Private area resources
-			$privateResources = array(
-				'painel'    => array('index'),
+            //Register resources
+            foreach ($config->resources as $resource => $actions) {
+                $acl->addResource(new Resource($resource), $actions->toArray());
+            }
 
-			);
-			foreach ($privateResources as $resource => $actions) {
-				$acl->addResource(new Resource($resource), $actions);
-			}
-
-			//Public area resources
-			$publicResources = array(
-				'index'      => array('index', 'auth', 'teste','error'),
-                'cadastro'      => array('index', 'save'),
-                'errors'     => array('show401', 'show404', 'show500'),
-			);
-			foreach ($publicResources as $resource => $actions) {
-				$acl->addResource(new Resource($resource), $actions);
-			}
-
-			//Grant access to public areas to both users and guests
-			foreach ($roles as $role) {
-				foreach ($publicResources as $resource => $actions) {
-					foreach ($actions as $action){
-						$acl->allow($role->getName(), $resource, $action);
-					}
-				}
-			}
-
-			//Grant access to private area to role Users
-			foreach ($privateResources as $resource => $actions) {
-				foreach ($actions as $action){
-					$acl->allow('Cliente', $resource, $action);
-				}
-			}
+            //Privileges
+            foreach ($config->privilege as $role => $methodList) {
+                foreach($methodList as $method => $levels) {
+                    foreach($levels as $resource => $accessList) {
+                        foreach($accessList as $access) {
+                            if ($method == 'allow') {
+                                $acl->allow($role, $resource, $access);
+                            } else {
+                                $acl->deny($role, $resource, $access);
+                            }
+                        }
+                    }
+                }
+            }
 
 			//The acl is stored in session, APC would be useful here too
 			$this->persistent->acl = $acl;
@@ -95,9 +82,9 @@ class Security extends Plugin
 		$auth = $this->auth->getIdentity();
 
 		if (!$auth){
-			$role = 'Guests';
+			$role = 'Visitante';
 		} else {
-			$role = 'Cliente';
+			$role = $auth['usuario_tipo'];
 		}
 
 		$controller = $dispatcher->getControllerName();
@@ -111,7 +98,7 @@ class Security extends Plugin
 				'controller' => 'errors',
 				'action'     => 'show401'
 			));
-            $this->session->destroy();
+
 			return false;
 		}
 	}

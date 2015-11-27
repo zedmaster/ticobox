@@ -36,8 +36,12 @@
                         <li>
                             <a class="nav-header" href="/cadastro"><span class="glyphicon glyphicon-plus"></span> Cadastrar</a>
                         </li>
+                        <li>
+                            <a class="nav-header" href="/index/logout"><span class="glyphicon glyphicon-log-out"></span> Sair</a>
+                        </li>
                     </ul>
                 </ul>
+                <p class="navbar-text navbar-right">{{ identity['nome'] }}</p>
             </div><!--/.nav-collapse -->
         </div>
     </nav>

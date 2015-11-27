@@ -67,6 +67,13 @@ class IndexController extends ControllerBase
         $this->view->disable();
     }
 
+    public function logoutAction()
+    {
+        $this->session->destroy();
+
+        $this->response->redirect('/');
+        $this->view->disable();
+    }
 
     public function errorAction()
     {

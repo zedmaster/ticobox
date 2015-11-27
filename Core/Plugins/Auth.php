@@ -32,11 +32,14 @@ class Auth extends Plugin
 
     private function _setIdentity($usuario)
     {
+        $home = $this->getDI()->get('config')->acl->home->toArray();
+
         $st_identity = [
             'id_usuario'    => $usuario->id_usuario,
             'email' => $usuario->email,
             'nome'  => $usuario->nome,
-            'usuario_tipo' => 'Cliente'
+            'usuario_tipo' => 'Cliente',
+            'home' => $home['Cliente']
         ];
 
         $this->session->set('identity', $st_identity);
