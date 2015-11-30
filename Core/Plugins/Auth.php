@@ -45,6 +45,19 @@ class Auth extends Plugin
         $this->session->set('identity', $st_identity);
     }
 
+
+    public function setGuest($name, $role, $url){
+        $st_identity = [
+            'id_usuario'    => '',
+            'email' => '',
+            'nome'  => $name,
+            'usuario_tipo' => $role,
+            'home' => $url
+        ];
+
+        $this->session->set('identity', $st_identity);
+    }
+
     public function getIdentity()
     {
         return $this->session->get('identity');

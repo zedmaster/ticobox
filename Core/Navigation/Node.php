@@ -86,6 +86,14 @@ class Node {
      */
     protected $isActive = false;
 
+
+    /**
+     * is Allow node flag
+     *
+     * @var bool
+     */
+    protected $isAllow = false;
+
     /**
      * Get css class name
      * 
@@ -316,6 +324,24 @@ class Node {
     public function isActive() {
         return $this->isActive;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isAllow()
+    {
+        return $this->isAllow;
+    }
+
+    /**
+     * @param boolean $isAllow
+     */
+    public function setAllow($isAllow)
+    {
+        $this->isAllow = $isAllow;
+    }
+
+
 
     /**
      * Has node any childs

@@ -79,9 +79,15 @@ class Navigate {
      * @param type $node
      */
     private function _generateElement($node) {
+        if(!$node->isAllow()){
+            return;
+        }
+
         $cssClasses = array();
+        $cssActive = '';
+
         if ($node->isActive())
-            $cssClasses[] = 'active';
+            $cssActive = 'class="active"';
 
         if (!is_null($node->getClass()))
             $cssClasses[] = $node->getClass();
@@ -90,7 +96,7 @@ class Navigate {
         $id = !is_null($node->getId()) ? " id='" . $node->getId() . "'" : '';
         $target = !is_null($node->getTarget()) ? " target='" . $node->getTarget() . "'" : '';
 
-        $this->html .= "\t\t".'<li '.$id.'>' . PHP_EOL;
+        $this->html .= "\t\t".'<li '.$cssActive.'>' . PHP_EOL;
         if (!$node->hasChilds()) {
             $this->html .= "\t\t\t".'<a href="'. $node->getUrl() .'" '. $target.' class="nav-header" ><span'.$class.'></span> ' . $this->_translate($node->getName()) . "</a>" . PHP_EOL;
         }

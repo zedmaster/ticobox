@@ -83,6 +83,10 @@ class Security extends Plugin
 
 		if (!$auth){
 			$role = 'Visitante';
+            $url = '/';
+            $name = 'Visitante';
+
+            $this->auth->setGuest($name, $role, $url);
 		} else {
 			$role = $auth['usuario_tipo'];
 		}

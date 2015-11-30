@@ -115,11 +115,12 @@ class Navigation {
      * @param type $module
      * @return void
      */
-    public function setActiveNode($action, $controller, $module) {
+    public function setActiveResourceNode($action, $controller, $module, $acl, $role) {
         $this->dissactiveNodes();
 
         foreach ($this->_navigations as $navigation) {
             $this->_activeCollection($navigation->getChilds(), $action, $controller, $module);
+            $this->_allowCollection($navigation->getChilds(), $acl, $role);
         }
     }
 
@@ -136,14 +137,34 @@ class Navigation {
 
         foreach ($collection as $node) {
             if ($node->getAction() == $action && 
-                    $node->getController() == $controller && 
-                        $node->getModule() == $module) {
-                
+                $node->getController() == $controller &&
+                $node->getModule() == $module) {
+
                 $this->_activateNode($node);
             }
 
             if ($node->hasChilds())
                 $this->_activeCollection($node->getChilds(), $action, $controller, $module);
+        }
+    }
+
+    public function _allowCollection($collection, $acl, $role) {
+
+        foreach ($collection as $node) {
+            if(!isset($acl['privilege'][$role]['allow'][$node->getController()])){
+                continue;
+            }
+
+
+            $aclList = $acl['privilege'][$role]['allow'][$node->getController()];
+            if (in_array($node->getAction(), $aclList)){
+                $node->setAllow(true);
+            }else{
+                continue;
+            }
+
+            if ($node->hasChilds())
+                $this->_allowCollection($node->getChilds(), $action, $controller, $module, $acl, $role);
         }
     }
 

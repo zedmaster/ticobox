@@ -80,7 +80,7 @@ return new \Phalcon\Config(array(
                     'url' => '/cadastro',
                     'name' => 'Cadastrar',
                     'module' => 'frontend',
-                    'controller' => 'index',
+                    'controller' => 'cadastro',
                     'action' => 'index',
                 ),
                 array(
