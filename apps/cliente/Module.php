@@ -1,6 +1,6 @@
 <?php
 
-namespace Ticobox\Frontend;
+namespace Ticobox\Cliente;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -22,9 +22,9 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces(array(
-            'Ticobox\Frontend\Controllers' => __DIR__ . '/controllers/',
-            'Ticobox\Frontend\Models' => __DIR__ . '/models/',
-            'Ticobox\Frontend\Forms' => __DIR__ . '/forms/',
+            'Ticobox\Cliente\Controllers' => __DIR__ . '/controllers/',
+            'Ticobox\Cliente\Models' => __DIR__ . '/models/',
+            'Ticobox\Cliente\Forms' => __DIR__ . '/forms/',
         ));
 
         $loader->register();
@@ -40,7 +40,7 @@ class Module implements ModuleDefinitionInterface
         /**
          * Read configuration
          */
-        $config = include APP_PATH . "/apps/frontend/config/config.php";
+        $config = include APP_PATH . "/apps/cliente/config/config.php";
 
         /**
          * Database connection is created based in the parameters defined in the configuration file

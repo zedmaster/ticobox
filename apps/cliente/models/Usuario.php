@@ -1,6 +1,6 @@
 <?php
 
-namespace Ticobox\Frontend\Models;
+namespace Ticobox\Cliente\Models;
 
 use Phalcon\Mvc\Model\Validator\Email as Email;
 use Core\Mvc\Model\Validator\Softunique;

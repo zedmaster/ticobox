@@ -20,9 +20,9 @@ return new \Phalcon\Config(array(
         //'baseUri'        => '/Ticobox/'
         'baseUri'        => '/',
         'modules' => array(
-                'frontend' => array(
-                'className' => 'Ticobox\Frontend\Module',
-                'path' => __DIR__ . '/../apps/frontend/Module.php'
+                'cliente' => array(
+                'className' => 'Ticobox\Cliente\Module',
+                'path' => __DIR__ . '/../apps/cliente/Module.php'
             )
         )
     ),
@@ -70,7 +70,7 @@ return new \Phalcon\Config(array(
                     'class' => 'glyphicon glyphicon-log-in',
                     'url' => '/',
                     'name' => 'Login',
-                    'module' => 'frontend',
+                    'module' => 'cliente',
                     'controller' => 'index',
                     'action' => 'index',
 
@@ -79,7 +79,7 @@ return new \Phalcon\Config(array(
                     'class' => 'glyphicon glyphicon-plus',
                     'url' => '/cadastro',
                     'name' => 'Cadastrar',
-                    'module' => 'frontend',
+                    'module' => 'cliente',
                     'controller' => 'cadastro',
                     'action' => 'index',
                 ),
@@ -87,7 +87,7 @@ return new \Phalcon\Config(array(
                     'class' => 'glyphicon glyphicon-log-out',
                     'url' => '/index/logout',
                     'name' => 'Logout',
-                    'module' => 'frontend',
+                    'module' => 'cliente',
                     'controller' => 'index',
                     'action' => 'logout',
                 ),

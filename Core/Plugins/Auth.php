@@ -3,7 +3,7 @@
 namespace Core\Plugins;
 
 use Phalcon\Mvc\User\Plugin;
-use Ticobox\Frontend\Models\Usuario;
+use Ticobox\Cliente\Models\Usuario;
 
 
 /**

@@ -4,8 +4,8 @@
  * Register application modules
  */
 $application->registerModules(array(
-    'frontend' => array(
-        'className' => 'Ticobox\Frontend\Module',
-        'path' => __DIR__ . '/../apps/frontend/Module.php'
+    'cliente' => array(
+        'className' => 'Ticobox\Cliente\Module',
+        'path' => __DIR__ . '/../apps/cliente/Module.php'
     )
 ));

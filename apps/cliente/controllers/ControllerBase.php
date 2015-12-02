@@ -1,6 +1,6 @@
 <?php
 
-namespace Ticobox\Frontend\Controllers;
+namespace Ticobox\Cliente\Controllers;
 
 use Phalcon\Mvc\Controller;
 

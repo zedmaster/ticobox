@@ -1,6 +1,6 @@
 <?php
 
-namespace Ticobox\Frontend\Forms;
+namespace Ticobox\Cliente\Forms;
 
 use Phalcon\Forms\Element\Submit;
 use Phalcon\Forms\Form;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Ticobox\Frontend\Controllers;
+namespace Ticobox\Cliente\Controllers;
 
-use Ticobox\Frontend\Forms\ClienteForm;
-use Ticobox\Frontend\Models\Usuario;
+use Ticobox\Cliente\Forms\ClienteForm;
+use Ticobox\Cliente\Models\Usuario;
 
 
 class CadastroController extends ControllerBase

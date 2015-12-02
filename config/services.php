@@ -48,8 +48,8 @@ $di->setShared('router', function () use ($config){
     require __DIR__ . '/../config/routes.php';
 
 
-    $router->setDefaultModule('frontend');
-    $router->setDefaultNamespace('Ticobox\Frontend\Controllers');
+    $router->setDefaultModule('cliente');
+    $router->setDefaultNamespace('Ticobox\Cliente\Controllers');
 
     return $router;
 });
@@ -141,7 +141,7 @@ $di->setShared('dispatcher', function() use ($di) {
 
     $dispatcher = new Dispatcher;
     $dispatcher->setEventsManager($eventsManager);
-    $dispatcher->setDefaultNamespace('Ticobox\Frontend\Controllers');
+    $dispatcher->setDefaultNamespace('Ticobox\Cliente\Controllers');
 
     return $dispatcher;
 });
