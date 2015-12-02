@@ -1,11 +1,14 @@
 <?php
 
 /*
+ * ZedNet 2015 Alexandre Ferreira Martins
+ *
+ * Implementação original de:
  * Copyright 2014 Michał Strzelczyk
  * mail: kontakt@michalstrzelczyk.pl
  * 
  */
-namespace Core\Navigation;
+namespace Core\Plugins\Navigation;
 
 class Node {
     
@@ -75,7 +78,7 @@ class Node {
     /**
      * Parents node
      * 
-     * @var \Core\Navigation\Node
+     * @var \Core\Plugins\Navigation\Node
      */
     protected $parent;
     
@@ -151,7 +154,7 @@ class Node {
     /**
      * Get parents node
      * 
-     * @return \Core\Navigation\Node | null
+     * @return \Core\Plugins\Navigation\Node | null
      */
     public function getParent() {
         return $this->parent;
@@ -188,7 +191,7 @@ class Node {
      * Set css class name
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setClass($value) {
         $this->class = $value;
@@ -200,7 +203,7 @@ class Node {
      * Set css id name
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setId($value) {
         $this->id = $value;
@@ -212,7 +215,7 @@ class Node {
      * Set node name
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setName($value) {
         $this->name = $value;
@@ -224,7 +227,7 @@ class Node {
      * Set url
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setUrl($value) {
         $this->url = $value;
@@ -236,7 +239,7 @@ class Node {
      * Set childs
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setChilds($value) {
         $this->childs = $value;
@@ -248,7 +251,7 @@ class Node {
      * Set html target
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setTarget($value) {
         $this->target = $value;
@@ -259,8 +262,8 @@ class Node {
     /**
      * Set Parent
      * 
-     * @param \Core\Navigation\Node $value
-     * @return \Core\Navigation\Node
+     * @param \Core\Plugins\Navigation\Node $value
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setParent($value) {
         $this->parent = $value;
@@ -272,7 +275,7 @@ class Node {
      * Set module name
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setModule($value) {
         $this->module = $value;
@@ -284,7 +287,7 @@ class Node {
      * Set controller name
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setController($value) {
         $this->controller = $value;
@@ -296,7 +299,7 @@ class Node {
      * Set action name
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setAction($value) {
         $this->action = $value;
@@ -308,7 +311,7 @@ class Node {
      * Set active flag
      * 
      * @param type $value
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function setActive($value) {
         $this->isActive = $value;

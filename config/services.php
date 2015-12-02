@@ -17,7 +17,7 @@ use Phalcon\Events\Manager as EventsManager;
 use Core\Plugins\Security;
 use Core\Plugins\NotFound;
 use Core\Plugins\Auth;
-use Core\Navigation;
+use Core\Plugins\Navigation;
 
 
 /**

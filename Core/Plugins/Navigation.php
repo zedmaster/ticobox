@@ -5,10 +5,10 @@
  * mail: kontakt@michalstrzelczyk.pl
  * 
  */
-namespace Core;
+namespace Core\Plugins;
 
 use \Core\View\Helpers\Navigate;
-use \Core\Navigation\Node;
+use \Core\Plugins\Navigation\Node;
 
 class Navigation {
 
