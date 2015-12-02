@@ -91,7 +91,8 @@ class Security extends Plugin
 			$role = $auth['usuario_tipo'];
 		}
 
-		$controller = $dispatcher->getControllerName();
+		$module = $dispatcher->getModuleName();
+        $controller = $module.':'.$dispatcher->getControllerName();
 		$action = $dispatcher->getActionName();
 
 		$acl = $this->getAcl();
@@ -99,8 +100,10 @@ class Security extends Plugin
 		$allowed = $acl->isAllowed($role, $controller, $action);
 		if ($allowed != Acl::ALLOW) {
 			$dispatcher->forward(array(
-				'controller' => 'errors',
-				'action'     => 'show401'
+                'namespace'     => 'Ticobox\Cliente\Controllers',
+                'module'        => 'cliente',
+				'controller'    => 'errors',
+				'action'        => 'show401'
 			));
 
 			return false;

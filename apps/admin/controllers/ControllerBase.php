@@ -1,6 +1,6 @@
 <?php
 
-namespace Ticobox\Cliente\Controllers;
+namespace Ticobox\Admin\Controllers;
 
 use Phalcon\Mvc\Controller;
 
@@ -20,8 +20,7 @@ class ControllerBase extends Controller
         );
         $this->view->setVar("navigation", $this->getDI()->get('navigation'));
 
-        //$this->view->setViewsDir(__DIR__ . '/../views/');
-        //$this->view->setTemplateAfter('main');
+
 
     }
 }

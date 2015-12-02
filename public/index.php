@@ -11,7 +11,7 @@ try {
     /**
      * Read the configuration
      */
-    $config = include APP_PATH . "/apps/cliente/config/config.php";
+    $config = include __DIR__ . "/../config/config.php";
 
 
     /**

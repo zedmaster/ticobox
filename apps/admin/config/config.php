@@ -18,26 +18,18 @@ return new \Phalcon\Config(array(
             'childs' => array(
                 array(
                     'class' => 'glyphicon glyphicon-log-in',
-                    'url' => '/',
+                    'url' => '/admin',
                     'name' => 'Login',
-                    'module' => 'cliente',
+                    'module' => 'admin',
                     'controller' => 'index',
                     'action' => 'index',
 
                 ),
                 array(
-                    'class' => 'glyphicon glyphicon-plus',
-                    'url' => '/cadastro',
-                    'name' => 'Cadastrar',
-                    'module' => 'cliente',
-                    'controller' => 'cadastro',
-                    'action' => 'index',
-                ),
-                array(
                     'class' => 'glyphicon glyphicon-log-out',
-                    'url' => '/index/logout',
+                    'url' => '/admin/index/logout',
                     'name' => 'Logout',
-                    'module' => 'cliente',
+                    'module' => 'admin',
                     'controller' => 'index',
                     'action' => 'logout',
                 ),

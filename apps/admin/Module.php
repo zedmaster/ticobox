@@ -1,6 +1,6 @@
 <?php
 
-namespace Ticobox\Cliente;
+namespace Ticobox\Admin;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -22,9 +22,9 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
 
         $loader->registerNamespaces(array(
-            'Ticobox\Cliente\Controllers' => __DIR__ . '/controllers/',
-            'Ticobox\Cliente\Models' => __DIR__ . '/models/',
-            'Ticobox\Cliente\Forms' => __DIR__ . '/forms/',
+            'Ticobox\Admin\Controllers' => __DIR__ . '/controllers/',
+            'Ticobox\Admin\Models' => __DIR__ . '/models/',
+            'Ticobox\Admin\Forms' => __DIR__ . '/forms/',
         ));
 
         $loader->register();
@@ -40,7 +40,7 @@ class Module implements ModuleDefinitionInterface
         /**
          * Read configuration
          */
-        $module_config = include APP_PATH . "/apps/cliente/config/config.php";
+        $module_config = include APP_PATH . "/apps/admin/config/config.php";
         $di->get('config')->merge($module_config);
         $config = $di->get('config');
 

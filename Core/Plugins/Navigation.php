@@ -85,7 +85,7 @@ class Navigation {
      * Node mapper
      * 
      * @param type $config
-     * @return \Core\Navigation\Node
+     * @return \Core\Plugins\Navigation\Node
      */
     public function mapNode($config) {
 
@@ -151,12 +151,13 @@ class Navigation {
     public function _allowCollection($collection, $acl, $role) {
 
         foreach ($collection as $node) {
-            if(!isset($acl['privilege'][$role]['allow'][$node->getController()])){
+            $name = $node->getModule().':'.$node->getController();
+            if(!isset($acl['privilege'][$role]['allow'][$name])){
                 continue;
             }
 
 
-            $aclList = $acl['privilege'][$role]['allow'][$node->getController()];
+            $aclList = $acl['privilege'][$role]['allow'][$name];
             if (in_array($node->getAction(), $aclList)){
                 $node->setAllow(true);
             }else{
@@ -164,7 +165,7 @@ class Navigation {
             }
 
             if ($node->hasChilds())
-                $this->_allowCollection($node->getChilds(), $action, $controller, $module, $acl, $role);
+                $this->_allowCollection($node->getChilds(), $acl, $role);
         }
     }
 
