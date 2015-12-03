@@ -11,5 +11,9 @@ $application->registerModules(array(
     'admin' => array(
         'className' => 'Ticobox\Admin\Module',
         'path' => __DIR__ . '/../apps/admin/Module.php'
+    ),
+    'caixa' => array(
+        'className' => 'Ticobox\Caixa\Module',
+        'path' => __DIR__ . '/../apps/caixa/Module.php'
     )
 ));
