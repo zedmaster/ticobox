@@ -22,7 +22,7 @@ class LoginForm extends Form
                 'message' => 'É necessário preencher a Chave'
             ))
         ));
-        $this->add($name);
+        //$this->add($name);
 
         // Email
         $email = new Text('email', ['class' => 'form-control']);

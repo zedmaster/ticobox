@@ -4,6 +4,7 @@ namespace Core\Plugins;
 
 use Phalcon\Mvc\User\Plugin;
 use Ticobox\Cliente\Models\Usuario;
+use Ticobox\Cliente\Models\UsuarioTipo;
 
 
 /**
@@ -33,13 +34,17 @@ class Auth extends Plugin
     private function _setIdentity($usuario)
     {
         $home = $this->getDI()->get('config')->acl->home->toArray();
+        $usuarioTipo = UsuarioTipo::findId($usuario->id_usuario_tipo);
+        $role = $usuarioTipo->nome;
+
+        //var_dump($role);die();
 
         $st_identity = [
             'id_usuario'    => $usuario->id_usuario,
             'email' => $usuario->email,
             'nome'  => $usuario->nome,
-            'usuario_tipo' => 'Cliente',
-            'home' => $home['Cliente']
+            'usuario_tipo' => $role,
+            'home' => $home[$role]
         ];
 
         $this->session->set('identity', $st_identity);

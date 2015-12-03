@@ -78,30 +78,32 @@ class Security extends Plugin
 	 */
 	public function beforeExecuteRoute(Event $event, Dispatcher $dispatcher)
 	{
+        $module = $dispatcher->getModuleName();
+        $controller = $module.':'.$dispatcher->getControllerName();
+        $action = $dispatcher->getActionName();
 
 		$auth = $this->auth->getIdentity();
+        $role = 'Visitante';
+        $url = '/'.$module;
+        $name = '';
 
 		if (!$auth){
-			$role = 'Visitante';
-            $url = '/';
-            $name = 'Visitante';
-
             $this->auth->setGuest($name, $role, $url);
 		} else {
-			$role = $auth['usuario_tipo'];
+            if($auth['usuario_tipo'] == 'Visitante' && $action != 'auth'){
+                if($auth['home'] != $url) {
+                    $this->auth->setGuest($name, $role, $url);
+                }
+            }else{
+                $role = $auth['usuario_tipo'];
+            }
 		}
-
-		$module = $dispatcher->getModuleName();
-        $controller = $module.':'.$dispatcher->getControllerName();
-		$action = $dispatcher->getActionName();
 
 		$acl = $this->getAcl();
 
 		$allowed = $acl->isAllowed($role, $controller, $action);
 		if ($allowed != Acl::ALLOW) {
 			$dispatcher->forward(array(
-                'namespace'     => 'Ticobox\Cliente\Controllers',
-                'module'        => 'cliente',
 				'controller'    => 'errors',
 				'action'        => 'show401'
 			));

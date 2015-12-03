@@ -72,20 +72,16 @@ $di->setShared('view', function () use ($config) {
     $view = new View();
 
     $view->setViewsDir($config->application->viewsDir);
+    $view->setLayoutsDir('../../common/layouts/');
+    $view->setTemplateAfter('main');
 
     $view->registerEngines(array(
         '.volt' => function ($view, $di) use ($config) {
-            //$view->setLayoutsDir( '/layouts/' );
-            $view->setLayoutsDir('../../common/layouts/');
-            $view->setTemplateAfter('main');
-
             $volt = new VoltEngine($view, $di);
-
             $volt->setOptions(array(
                 'compiledPath' => $config->application->cacheDir,
                 'compiledSeparator' => '_'
             ));
-
             return $volt;
         },
         '.phtml' => 'Phalcon\Mvc\View\Engine\Php'

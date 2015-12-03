@@ -8,7 +8,6 @@ return new \Phalcon\Config(array(
         'viewsDir'       => __DIR__ . '/../views/',
         'formsDir'       => __DIR__ . '/../forms/',
         'cacheDir'       => __DIR__ . '/../../../cache/volt/',
-        //'layoutDir'      => __DIR__ . '/../views/layout',
     ),
     // Navigation
     'navigation' => array(

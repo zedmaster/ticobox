@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ identity['home'] }}"><img src="/img/logox25.png" alt="TicoBox"/>&nbsp;</a>
+                <a class="navbar-brand" href="{{ identity['home'] }}"><img src="/img/logo_{{ modulo }}x25.png" alt="TicoBox"/>&nbsp;</a>
             </div>
             <div class="collapse navbar-collapse">
                 {{ navigation.toHtml('top') }}

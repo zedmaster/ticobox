@@ -6,7 +6,7 @@
                 <h3 class="panel-title">Instruções</h3>
             </div>
             <div class="panel-body">
-                <p>Efetue o login utilizando a chave de acesso,  seu e-mail e senha, para acessar a Internet</p>
+                <p>Efetue o login utilizando seu e-mail e senha, para acessar o sistema.</p>
 
             </div>
         </div>

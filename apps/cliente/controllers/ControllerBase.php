@@ -19,9 +19,7 @@ class ControllerBase extends Controller
             $identity['usuario_tipo']
         );
         $this->view->setVar("navigation", $this->getDI()->get('navigation'));
-
-        //$this->view->setViewsDir(__DIR__ . '/../views/');
-        //$this->view->setTemplateAfter('main');
+        $this->view->modulo = $this->dispatcher->getModuleName();
 
     }
 }
