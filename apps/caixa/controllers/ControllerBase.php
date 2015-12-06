@@ -20,8 +20,10 @@ class ControllerBase extends Controller
         );
         $this->view->setVar("navigation", $this->getDI()->get('navigation'));
         $this->view->modulo = $this->dispatcher->getModuleName();
+        $controller = $this->dispatcher->getControllerName();
 
-
-
+        if($controller != 'index' && $controller != 'errors'){
+            $this->view->setTemplateAfter('caixa');
+        }
     }
 }

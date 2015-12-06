@@ -80,7 +80,9 @@ $di->setShared('view', function () use ($config) {
             $volt = new VoltEngine($view, $di);
             $volt->setOptions(array(
                 'compiledPath' => $config->application->cacheDir,
-                'compiledSeparator' => '_'
+                'compiledSeparator' => '_',
+                'stat' => true,
+                'compileAlways' => true
             ));
             return $volt;
         },
