@@ -19,29 +19,39 @@
             </nav>
         </div>
 
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <button type="button" class="btn btn-default toggle-nav" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                    </button>
+                </div>
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                    <ul class='nav navbar-nav'  id='top-navigation'>
-                        <li><a href="#" class="toggle-nav" ><i class="fa fa-bars"></i></a></li>
-                        <li class="active"><a href="/"  class="nav-header" >Grupo 1</a></li>
-                        <li><a href="/"  class="nav-header" >Grupo 2</a></li>
-                        <li><a href="/"  class="nav-header" >Grupo 3</a></li>
-                        <li><a href="/"  class="nav-header" >Grupo 4</a></li>
+                <div class="collapse navbar-collapse" >
+                    <ul class="nav navbar-nav">
+                       <li><a href="#">Action</a></li>
                     </ul>
+                </div>
             </div>
         </nav>
-
 
         <div class="container-fluid content">
             <aside class="col-sm-4 fill">Caixa</aside>
             <section class="col-sm-8 fill">Itens</section>
         </div>
 
-        <footer class="footer">
-            <button type="button" class="btn btn-default" aria-label="Left Align">
-                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-            </button>
+        <footer class="footer navbar-fixed-bottom">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                </button>
+            </div>
         </footer>
 
 

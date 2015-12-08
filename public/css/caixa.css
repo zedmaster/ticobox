@@ -6,21 +6,11 @@ html, body
 {
     height: 100%;
     overflow: hidden;
+
 }
 
-
-.content {
-    display: block;
-    overflow: hidden;
-    height: 100vh;
-    margin-top: -30px;
-    padding-top: 80px;
-    padding-left: 0px;
-    padding-right: 0px;
-    position: relative;
-    width: 100%;
-    backface-visibility: hidden;
-    will-change: overflow;
+@media screen and (max-width: 768px) {
+    body { overflow: scroll; }
 }
 
 header, footer, aside, section {
@@ -32,26 +22,28 @@ header, footer, aside, section {
     padding-right: 0px;
 }
 
-
-
 section {
     background-color: #fff;
 }
 
 
+.content {
+    display: block;
+    overflow: hidden;
+    height: 100vh;
+    margin-top: -83px;
+    padding-top: 90px;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
 .fill {
     margin-bottom: -9999px;
     padding-bottom: 9999px;
-}
-
-
-.row-scroll {
-    margin: 0 auto;
-    width: 900px;
-}
-
-.navbar-default {
-    position: absolute;
 }
 
 
