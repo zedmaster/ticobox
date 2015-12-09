@@ -27,9 +27,6 @@
 
     {% include "sliding.volt" %}
 
-
-
-
     <script src="/js/sliding.js"></script>
 
 </body>
