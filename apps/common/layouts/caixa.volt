@@ -10,7 +10,6 @@
     {{ javascript_include('js/bootstrap.min.js') }}
     {{ stylesheet_link('css/bootstrap.min.css') }}
     {{ stylesheet_link('css/caixa.css') }}
-
     {{ stylesheet_link('css/sliding.css') }}
     <link href="/img/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
 
