@@ -1,31 +1,26 @@
 /*
- * style.css
+ * caixa.css
  */
-
-html, body
-{
-    height: 100%;
-    overflow: hidden;
-
-}
-
 @media screen and (max-width: 768px) {
     body {
         overflow-y: scroll;
         overflow-x: hidden;
-        height: 100%;
     }
-    #container {
-        height: auto;
-    }
-    .content {
-        height: auto;
-    }
+
 }
 
 @media screen and (min-width: 768px) {
-    aside {
+    html, body
+    {
+        overflow: hidden;
+    }
 
+    .navbar-nav>li>a {
+        padding-top: 8px;
+        padding-bottom: 10px;
+    }
+
+    aside, section {
         overflow-y: scroll;
         overflow-x: hidden;
         height: 100%;
@@ -38,11 +33,185 @@ html, body
     }
 }
 
-.col-sm-4 {
-    padding: 0px;
+
+
+
+/**** Sliding ******/
+#container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    padding: 44px 0;
+    position: relative;
+    -webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    -ms-transform:translateX(0);
+    -o-transform:translateX(0);
+    transform:translateX(0);
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+    -o-transition:.5s ease all;
+    transition:.5s ease all;
+}
+
+#nav {
+    width: 200px;
+    height: 100%;
+    background: #bf3e11;
+    position: absolute;
+    left: -200px;
+    top: 39px;
+    -webkit-transition:.5s ease all;
+    -moz-transition:.5s ease all;
+    -o-transition:.5s ease all;
+    transition:.5s ease all;
+    /* By default, rotate the menu 90deg inwards */
+    -webkit-transform:rotateY(-90deg);
+    -moz-transform:rotateY(-90deg);
+    -ms-transform:rotateY(-90deg);
+    -o-transform:rotateY(-90deg);
+    transform:rotateY(-90deg);
+}
+
+#container.display-nav #canvas {
+    -webkit-transform:translateX(200px);
+    -moz-transform:translateX(200px);
+    -ms-transform:translateX(200px);
+    -o-transform:translateX(200px);
+    transform:translateX(200px);
+}
+
+/* transition the menu with perspective on "show-nav" */
+#container.display-nav #nav {
+    -webkit-transform-origin:100% 50%;
+    -moz-transform-origin:100% 50%;
+    -ms-transform-origin:100% 50%;
+    -o-transform-origin:100% 50%;
+    transform-origin:100% 50%;
+    -webkit-transform:perspective(600px) rotateY(0deg);
+    -moz-transform:perspective(600px) rotateY(0deg);
+    -ms-transform:perspective(600px) rotateY(0deg);
+    -o-transform:perspective(600px) rotateY(0deg);
+    transform:perspective(600px) rotateY(0deg);
+}
+
+/****** Container *****/
+
+
+/*** Navbar ***/
+#nav a {
+    color: white;
+}
+
+#nav a:hover {
+    color: #bf3e11;
+}
+
+.navbar {
+    min-height: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar .form-control {
+    height: 30px;
+    padding: 8px 12px;
+}
+
+.navbar-form {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar .btn {
+    padding: 4px 8px;
+    margin-top: 4px;
+}
+
+.navbar input {
+    margin-top: 4px;
+}
+
+#btn-toggle {
+    margin-top: 4px;
+}
+
+.navbar {
+    min-height: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-text {
+    margin-top: 4px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navbar-toggle{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#txt-cliente {
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 
+
+/*** Content ***/
+div.content, aside.col-sm-4, section {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.thumbnail .caption , .caption p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.price {
+    position: absolute;
+    top: 2px;
+    right: 10%;
+    vertical-align: top;
+    color: white;
+    line-height: 16px;
+    background: #d4a97b;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+.content {
+    display: block;
+    overflow: hidden;
+    margin-top: -5px;
+    padding-top: 0px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+
+footer.navbar-text, footer.navbar, footer.navbar>div.container-fluid,
+footer.navbar div.col-xs-5, footer.navbar div.col-sm-1
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+
+
+/*
 header, aside, section {
     background-color: #f5f5f5;
     background-color: rgba(86,61,124,.15);
@@ -52,44 +221,20 @@ header, aside, section {
     padding-right: 0px;
 }
 
-section {
+section.col-sm-8 {
     background-color: #fff;
+    padding: 0px;
 }
 
-
-.content {
-    display: block;
-    overflow: hidden;
-    margin-top: -83px;
-    padding-top: 90px;
-    padding-left: 0px;
-    padding-right: 0px;
-    position: relative;
-    width: 100%;
-    backface-visibility: hidden;
-    will-change: overflow;
+#itens {
+    margin: 0px;
 }
 
-.fill {
-    margin-bottom: -9999px;
-    padding-bottom: 9999px;
+#itens div.col-md-3 {
+    padding: 0px;
 }
 
-
-#nav a {
-    color: white;
+#itens div.thumbnail {
+    margin: 0px;
 }
-
-#nav a:hover {
-    color: #bf3e11;
-}
-
-.container-fluid {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.navbar-text {
-    margin-left: 0px;
-    margin-right: 0px;
-}
+*/
