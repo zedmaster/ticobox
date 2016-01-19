@@ -37,3 +37,12 @@ $("#toggle > li > div").click(function () {
     $(this).addClass('active');
 
 });
+
+$('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var nome = button.data('nome');
+    var preco = button.data('preco');
+    var modal = $(this);
+    modal.find('.modal-title').text(nome + ' - R$ ' + preco);
+
+})

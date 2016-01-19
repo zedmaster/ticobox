@@ -20,7 +20,7 @@
         padding-bottom: 10px;
     }
 
-    aside, section {
+    .aside-main, .section-main {
         overflow-y: scroll;
         overflow-x: hidden;
         height: 100%;
@@ -28,12 +28,15 @@
     #container {
         height: 100vh;
     }
-    .content {
+    .content-main {
         height: 100vh;
     }
 }
 
-
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
 
 
 /**** Sliding ******/
@@ -103,6 +106,29 @@
 /****** Container *****/
 
 
+/*** Modal ***/
+.modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+.modal-faixa{
+    padding: 4px;
+}
+
+.modal-faixa div strong{
+    font-size: 18px;
+}
+
+
+/** Modal-Grupo **/
+#m-grupo-qtd {
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-top: 6px;
+}
+
+
 /*** Navbar ***/
 #nav a {
     color: white;
@@ -165,9 +191,25 @@
 
 
 /*** Content ***/
+.content {
+    display: block;
+    overflow: hidden;
+    margin-top: -5px;
+    padding-top: 0px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+
+
 div.content, aside.col-sm-4, section {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+aside, section {
+    padding-top: 10px;
 }
 
 .thumbnail .caption , .caption p {
@@ -185,17 +227,6 @@ div.content, aside.col-sm-4, section {
     background: #d4a97b;
     padding: 2px 5px;
     border-radius: 2px;
-}
-
-.content {
-    display: block;
-    overflow: hidden;
-    margin-top: -5px;
-    padding-top: 0px;
-    position: relative;
-    width: 100%;
-    backface-visibility: hidden;
-    will-change: overflow;
 }
 
 
