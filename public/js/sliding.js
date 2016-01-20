@@ -19,7 +19,9 @@ function toggleNavigation() {
 }
 
 
-// SLiding codes
+/**
+ * Frame Geral
+ */
 $("#toggle > li > div").click(function () {
     if (false == $(this).next().is(':visible')) {
         $('#toggle ul').slideUp();
@@ -38,11 +40,25 @@ $("#toggle > li > div").click(function () {
 
 });
 
-$('#myModal').on('show.bs.modal', function (event) {
+/**
+ * Modal Grupo
+ */
+$('#modal-grupo').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
     var nome = button.data('nome');
     var preco = button.data('preco');
     var modal = $(this);
     modal.find('.modal-title').text(nome + ' - R$ ' + preco);
+
+})
+
+/**
+ * Modal Unidade
+ */
+$('#modal-unidade').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var nome = button.data('nome');
+    var modal = $(this);
+    modal.find('.modal-title').text(nome);
 
 })
