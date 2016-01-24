@@ -122,6 +122,8 @@
 
 
 /*** Modal ***/
+
+
 .modal-body {
     position: relative;
     padding: 0px;
@@ -139,6 +141,9 @@
     padding: 0px !important;
 }
 
+.modal-form {
+    padding: 10px;
+}
 
 /** Modal-Grupo **/
 #m-grupo-qtd {

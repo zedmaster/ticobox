@@ -50,7 +50,7 @@ $('#modal-grupo').on('show.bs.modal', function (event) {
     var modal = $(this);
     modal.find('.modal-title').text(nome + ' - R$ ' + preco);
 
-})
+});
 
 /**
  * Modal Unidade
@@ -61,4 +61,28 @@ $('#modal-unidade').on('show.bs.modal', function (event) {
     var modal = $(this);
     modal.find('.modal-title').text(nome);
 
-})
+});
+
+
+/**
+ * Modal Pagamento Tipo
+ */
+$('#modal-pagamento-tipo').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var nome = button.data('nome');
+    var modal = $(this);
+    modal.find('.modal-title').text("Pagamento por  " + nome);
+});
+
+
+/** Possibiolita abrir modal em cima da outra **/
+$(document).on('show.bs.modal', '.modal', function () {
+    var zIndex = 1040 + (10 * $('.modal:visible').length);
+    $(this).css('z-index', zIndex);
+    setTimeout(function() {
+        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+    }, 0);
+});
+$(document).on('hidden.bs.modal', '.modal', function () {
+    $('.modal:visible').length && $(document.body).addClass('modal-open');
+});

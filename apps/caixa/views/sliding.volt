@@ -35,7 +35,7 @@
                     </div>
                 </form>
 
-                <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
+                <button type="button" class="btn btn-default pull-right" aria-label="Left Align" data-toggle="modal" data-target="#modal-cliente">
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 </button>
 
@@ -83,7 +83,7 @@
             <div class="col-xs-4 col-sm-1 navbar-text">TOTAL</div>
             <div class="col-xs-5 col-sm-2 text-right navbar-text">50,00</div>
             <div class="col-xs-3 col-sm-1 text-right">
-                <button type="button" class="btn btn-default" aria-label="Left Align">Receber</button>
+                <button type="button" class="btn btn-default" aria-label="Left Align"  data-toggle="modal" data-target="#modal-pagamento">Receber</button>
             </div>
         </div>
     </footer>
@@ -95,3 +95,10 @@
 
 {% include "modal-unidade.volt" %}
 
+{% include "modal-cliente.volt" %}
+
+{% include "modal-pagamento.volt" %}
+
+{% include "modal-desconto.volt" %}
+
+{% include "modal-pagamento-tipo.volt" %}
