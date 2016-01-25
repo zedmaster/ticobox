@@ -50,16 +50,13 @@
         <div id="nav">
             <nav>
                 <ul class="nav">
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#" id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false">Link 2 (toggle)</a>
-                        <ul class="nav collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
-                            <li><a href="#">Link 2.1</a></li>
-                            <li><a href="#">Link 2.2</a></li>
-                            <li><a href="#">Link 2.3</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Link 3</a></li>
-                    <li><a href="#">Link 4</a></li>
+                    <li><h3>CAIXA 01</h3></li>
+                    <li><h3>Colaborador 01</h3></li>
+                    <li><a href="#modal-colaborador" data-toggle="modal">Trocar Colaborador</a></li>
+                    <li><a href="#modal-cancelar" data-toggle="modal">Cancelar Vendas</a></li>
+                    <li><a href="#modal-suporte" data-toggle="modal">Suporte</a></li>
+                    <li><a href="#modal-sistema" data-toggle="modal">Sistema</a></li>
+                    <li><a href="#modal-fechar" data-toggle="modal">Fechar Caixa</a></li>
                 </ul>
             </nav>
         </div>
@@ -102,3 +99,13 @@
 {% include "modal-desconto.volt" %}
 
 {% include "modal-pagamento-tipo.volt" %}
+
+{% include "modal-colaborador.volt" %}
+
+{% include "modal-cancelar.volt" %}
+
+{% include "modal-suporte.volt" %}
+
+{% include "modal-sistema.volt" %}
+
+{% include "modal-fechar.volt" %}
