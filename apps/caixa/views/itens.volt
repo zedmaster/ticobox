@@ -1,11 +1,10 @@
-<ul data-role="listview" data-inset="true">
+<ul data-role="listview" data-inset="true" class="list-itens">
     {% for i in 1..8 %}
     <li>
         <a href="#">
             <img src="/img/no-image.png" class="ui-li-thumb">
-            <h2>Produto {{ i }}</h2>
-            <p>Apple released iOS 6.1</p>
-            <p class="ui-li-aside">iOS</p>
+            <h2>Grupo do Produto {{ i }} da caixa</h2>
+            <p class="ui-li-aside">$ 1.000,00</p>
         </a>
     </li>
     {% endfor %}

@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for i in 1..20 %}
+            {% for i in 1..5 %}
                 <tr>
                     <td style="width: 80%;">
                         <div>10,00</div>
