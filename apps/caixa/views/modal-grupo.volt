@@ -1,76 +1,65 @@
-<div id="modal-grupo" class="modal fade" role="dialog">
-    <div class="modal-dialog  modal-lg">
+<div data-role="page" id="modal-grupo">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"></h4>
+    <div data-role="header" data-position="fixed">
+        <a href="#caixa" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Voltar</a>
+        <h1>Grupo 1 - R$ 100,00</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="ui-grid-a ui-responsive">
+
+            <div class="ui-block-a">
+
+                <label for="currency-controlgroup">Quantidade</label>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">+</a>
+                    <button>6</button>
+                    <a href="#" class="ui-btn ui-corner-all ui-icon-minus ui-btn-icon-notext">-</a>
+                </div>
+
+                <table id="grupo-table" data-role="table" >
+                    <thead>
+                    <tr>
+                        <th data-priority="1"></th>
+                        <th data-priority="1"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in 1..3 %}
+                        <tr>
+                            <td style="width: 80%;">
+                                <div>10,00</div>
+                                <div>Produto {{ i }}</div>
+                            </td>
+                            <td>
+                                <div>3 UN</div>
+                                <div>30,00</div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
-            <div class="modal-body">
 
-                <div class="row row-no-padding">
-                    <aside class="col-sm-4 aside-modal">
-                        <div class="row modal-faixa bg-primary vertical-align row-no-padding">
-                            <div class="col-xs-6 col-sm-6"><strong>Quantidade</strong></div>
-                            <div class="col-xs-6 col-sm-6">
-                                <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
-                                </button>
-                                <strong id="m-grupo-qtd" class="pull-right">10</strong>
-                                <button type="button" class="btn btn-default pull-right" aria-label="Left Align">
-                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                        </div>
 
-                        <table class="table table-striped">
-                            <tbody>
-                            {% for i in 1..12 %}
-                                <tr>
-                                    <td>
-                                        <div class="row row-no-padding">
-                                            <div class="col-xs-8 col-sm-9">25,00</div>
-                                            <div class="col-xs-4 col-sm-3 text-right">2 UN</div>
-                                        </div>
-                                        <div class="row row-no-padding">
-                                            <div class="col-xs-8 col-sm-9">Produto {{ i }}</div>
-                                            <div class="col-xs-4 col-sm-3 text-right">50,00</div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                        <div class="row modal-faixa bg-primary vertical-align row-no-padding">
-                            <div class="col-xs-6 col-sm-6"><strong>Total</strong></div>
-                            <div class="col-xs-6 col-sm-6 text-right"><strong class="pull-right">450,00</strong></div>
-                        </div>
-                    </aside>
-
-                    <section class="col-sm-8 section-modal">
-                        {% for i in 1..12 %}
-                            <a href="#myModal" class="col-xs-4 col-sm-4 col-md-3 col-lg-3" >
-                                <div class="thumbnail">
-                                    <img src="/img/no-image.png" class="img-rounded" alt="Produto {{ i }}">
-                                    <span class="price">$ 100,00</span>
-                                    <div class="caption">
-                                        <p>Produto {{ i }}</p>
-                                    </div>
-                                </div>
+            <div class="ui-block-b list-itens">
+                <ul data-role="listview" data-inset="true" class="list-itens">
+                    {% for i in 1..3 %}
+                        <li>
+                            <a href="#" >
+                                <img src="/img/no-image.png" class="ui-li-thumb">
+                                <h2>Produto {{ i }}</h2>
+                                <p class="ui-li-aside">$ 100,00</p>
                             </a>
-                        {% endfor %}
-                    </section>
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Adicionar</button>
-                </div>
-
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
+    </div>
 
+    <div data-role="footer" data-position="fixed">
+        <span>TOTAL</span><span> R$ 600,00</span>
+            <a href="#caixa" class="ui-btn ui-corner-all ui-shadow ui-icon-plus ui-btn-icon-right">Adicionar</a>
     </div>
 </div>

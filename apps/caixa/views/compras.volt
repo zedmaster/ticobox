@@ -20,7 +20,7 @@
                 <tr>
                     <td style="width: 80%;">
                         <div>10,00</div>
-                        <div>Produto 01</div>
+                        <div>Produto {{ i }}</div>
                     </td>
                     <td>
                         <div>3 UN</div>

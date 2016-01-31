@@ -35,3 +35,6 @@
     </div>
 
 </div>
+
+
+{% include "modal-grupo.volt" %}

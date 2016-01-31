@@ -1,16 +1,29 @@
-th {
-    border-bottom: 1px solid #d6d6d6;
+/***** Page *****/
+.ui-content {
+    padding: 0px;
 }
 
-tr:nth-child(even) {
-    background: #e9e9e9;
+
+/***** Popup *****/
+/* Alinhamento */
+.ui-popup {
+    padding: 20px;
 }
 
+
+/******* Table list ******/
+/* ocultar thead das compras */
 #compras-table thead {
     display: none;
 }
-
-
+/* Alterar cor das linhas*/
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+/* Alinhar tds ao lado */
 @media only all {
     .ui-table-reflow td, .ui-table-reflow th {
         text-align: left;
@@ -18,27 +31,16 @@ tr:nth-child(even) {
     }
 }
 
+
+
+/***** Lista de Itens *****/
+/*Arruma o espaçamento entre os itens*/
 .list-itens .ui-listview .ui-btn-icon-right {
     padding-right: 0px;
 }
 
-/* A bit custom styling */
-.list-itens .ui-listview li .ui-btn p {
-    color: #c0c0c0;
-}
-.list-itens .ui-listview li .ui-btn .ui-li-aside {
-    color: #eee;
-}
-
-
-.my-page .ui-content {
-    padding: 0px;
-}
-
-
-
 .list-itens .ui-listview li > .ui-btn {
-    -webkit-box-sizing: border-box; /* include padding and border in height so we can set it to 100% */
+    -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: 100%;
@@ -73,7 +75,7 @@ tr:nth-child(even) {
     font-size: 1.25em;
     margin: 0;
     padding: .125em 1em;
-    /*bottom: 50%;*/
+    height: inherit;
 }
 .list-itens .ui-listview p {
     font-size: 1em;
@@ -153,10 +155,12 @@ tr:nth-child(even) {
 }
 
 
+/* Breakpoint itens */
+
 .list-itens .ui-listview li {
     float: left;
     width: 30%;
-    height: 170px;
+    height: 150px;
     margin: .5625em 1.5%;
 }
 
@@ -167,7 +171,7 @@ tr:nth-child(even) {
         float: left;
         width: 20%;
         height: 180px;
-        margin: .5625em 1%;
+        margin: .5625em 2%;
     }
 
     .ui-block-a {
