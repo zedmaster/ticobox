@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<div data-role="page" id="caixa">
+<div data-role="page" id="page-caixa">
 
     <div data-role="panel" id="menu" data-display="push">
         <h2>CAIXA 01</h2>
@@ -52,13 +52,15 @@
 
     <div data-role="footer" data-position="fixed">
         <span>TOTAL</span><span> R$ 600,00</span>
-            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-icon-shop ui-btn-icon-right">Receber</a>
+            <a href="#page-pagamento" class="ui-btn ui-corner-all ui-shadow ui-icon-shop ui-btn-icon-right">Receber</a>
     </div>
 
     {% include "modal-medida.volt" %}
 </div>
 
-{% include "modal-grupo.volt" %}
+{% include "page-grupo.volt" %}
+
+{% include "page-pagamento.volt" %}
 
 </body>
 </html>

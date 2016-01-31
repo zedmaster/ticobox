@@ -137,26 +137,7 @@ tr:nth-child(even) {
     transition: all 500ms ease;
 }
 
-
-
-
-@media ( min-width: 561px ) {
-    .ui-block-a {
-        width: 40% !important;
-    }
-    .ui-block-b {
-        width: 60% !important;
-    }
-
-    .ui-listview .ui-li-has-thumb h2 {
-        top: 60%;
-        font-size: 0.9em;
-    }
-}
-
-
 /* Breakpoint itens */
-
 .list-itens .ui-listview li {
     float: left;
     width: 30%;
@@ -165,19 +146,53 @@ tr:nth-child(even) {
 }
 
 
+
+/***** listview Pagamentos *****/
+/* altera a cor de fundo, borta e texto*/
+#listview-recebidos .li-pagamento a {
+    background-color: #FFFFFF !important;
+    border-color: #8c8a6c !important;
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+#listview-recebidos .li-pagamento .ui-btn-icon-notext:after {
+    background-color: rgba(255, 0, 0, 0.61) !important;
+}
+/* Aumenta o tamanho dos campos de valores */
+#listview-recebidos li a span ,#listview-recebidos li span {
+    font-size: 18px;
+}
+
+
+
+/***** Breakpoints*****/
+/* breakpoint 561px */
+@media ( min-width: 561px ) {
+    /** blocks do page-caixa **/
+    .page-caixa .ui-block-a {
+        width: 40% !important;
+    }
+    .page-caixa .ui-block-b {
+        width: 60% !important;
+    }
+}
+
+
+
 /* breakpoint 768px */
 @media ( min-width: 768px ) {
+    /** Block dos intens Itens **/
     .list-itens .ui-listview li {
         float: left;
         width: 20%;
         height: 180px;
         margin: .5625em 2%;
     }
-
-    .ui-block-a {
+    /** blocks do page-caixa **/
+    .page-caixa .ui-block-a {
         width: 40% !important;
     }
-    .ui-block-b {
+    .page-caixa .ui-block-b {
         width: 60% !important;
     }
 }

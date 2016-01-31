@@ -1,7 +1,7 @@
 <ul data-role="listview" data-inset="true" class="list-itens">
     {% for i in 1..4 %}
     <li>
-        <a href="#modal-grupo" >
+        <a href="#page-grupo" >
             <img src="/img/no-image.png" class="ui-li-thumb">
             <h2>Grupo do Produto {{ i }} da caixa</h2>
             <p class="ui-li-aside">$ 1.000,00</p>

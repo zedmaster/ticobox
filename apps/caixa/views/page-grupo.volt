@@ -1,7 +1,7 @@
-<div data-role="page" id="modal-grupo">
+<div data-role="page" id="page-grupo">
 
     <div data-role="header" data-position="fixed">
-        <a href="#caixa" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Voltar</a>
+        <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Voltar</a>
         <h1>Grupo 1 - R$ 100,00</h1>
     </div>
 
@@ -60,6 +60,6 @@
 
     <div data-role="footer" data-position="fixed">
         <span>TOTAL</span><span> R$ 600,00</span>
-            <a href="#caixa" class="ui-btn ui-corner-all ui-shadow ui-icon-plus ui-btn-icon-right">Adicionar</a>
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-plus ui-btn-icon-right">Adicionar</a>
     </div>
 </div>
