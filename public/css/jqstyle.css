@@ -137,15 +137,6 @@ tr:nth-child(even) {
     transition: all 500ms ease;
 }
 
-/* Breakpoint itens */
-.list-itens .ui-listview li {
-    float: left;
-    width: 30%;
-    height: 150px;
-    margin: .5625em 1.5%;
-}
-
-
 
 /***** listview Pagamentos *****/
 /* altera a cor de fundo, borta e texto*/
@@ -166,34 +157,40 @@ tr:nth-child(even) {
 
 
 /***** Breakpoints*****/
+/* breakpoint default */
+.list-itens .ui-listview li {
+    float: left;
+    width: 30%;
+    height: 150px;
+    margin: .5625em 1.5%;
+}
+
 /* breakpoint 561px */
 @media ( min-width: 561px ) {
+    /** listvew dos intens **/
+    .list-itens .ui-listview li {
+        float: left;
+        width: 32%;
+        height: 180px;
+        margin: .4em 0.6%;
+    }
     /** blocks do page-caixa **/
-    .page-caixa .ui-block-a {
+    #page-caixa .ui-block-a, #page-grupo .ui-block-a {
         width: 40% !important;
     }
-    .page-caixa .ui-block-b {
+    #page-caixa .ui-block-b, #page-grupo .ui-block-b {
         width: 60% !important;
     }
 }
 
-
-
 /* breakpoint 768px */
 @media ( min-width: 768px ) {
-    /** Block dos intens Itens **/
+    /** listview dos intens **/
     .list-itens .ui-listview li {
         float: left;
         width: 20%;
         height: 180px;
         margin: .5625em 2%;
-    }
-    /** blocks do page-caixa **/
-    .page-caixa .ui-block-a {
-        width: 40% !important;
-    }
-    .page-caixa .ui-block-b {
-        width: 60% !important;
     }
 }
 
