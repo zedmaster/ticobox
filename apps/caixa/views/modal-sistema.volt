@@ -1,25 +1,12 @@
-<div id="modal-sistema" class="modal fade" role="dialog">
-    <div class="modal-dialog  modal-md">
+<div data-role="popup" id="modal-sistema" data-theme="a" class="ui-corner-all"  data-overlay-theme="a" data-theme="a">
+    <form>
+        <h3>Sistema</h3>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Sistema</h4>
-            </div>
-            <div class="modal-body">
-
-                <form class="modal-form">
+        <p>Informações do sistema.</p>
 
 
-                </form>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                </div>
-
-            </div>
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-close ui-btn-icon-right" data-rel="back">Fechar</a>
         </div>
-
-    </div>
+    </form>
 </div>

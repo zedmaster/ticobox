@@ -1,29 +1,10 @@
-<div id="modal-fechar" class="modal fade" role="dialog">
-    <div class="modal-dialog  modal-md">
+<div data-role="popup" id="modal-fechar" data-theme="a" class="ui-corner-all"  data-overlay-theme="a" data-theme="a">
+    <form>
+        <h3>Deseja fechar o caixa?</h3>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Fechar Caixa</h4>
-            </div>
-            <div class="modal-body">
-
-                <form class="modal-form">
-
-
-                    <h3>Deseja fechar o caixa?</h3>
-
-
-                </form>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                    <button type="button" class="btn btn-primary">Sim</button>
-                </div>
-
-            </div>
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Voltar</a>
+            <a href="/caixa/index/logout" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-power ui-btn-icon-right" >Sair</a>
         </div>
-
-    </div>
+    </form>
 </div>

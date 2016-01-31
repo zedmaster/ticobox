@@ -23,20 +23,20 @@
 <div data-role="page" id="page-caixa">
 
     <div data-role="panel" id="menu" data-display="push">
-        <h2>CAIXA 01</h2>
-        <h3>Colaborador 01</h3>
+        <h3>CAIXA 01</h3>
+        <h4>Colaborador 01</h4>
         <ul data-role="listview">
-            <li><a href="#">Trocar Colaborador</a></li>
-            <li><a href="#">Cancelar Vendas</a></li>
-            <li><a href="#">Suporte</a></li>
-            <li><a href="#">Sistema</a></li>
-            <li><a href="#">Fechar Caixa</a></li>
+            <li><a href="#modal-colaborador" data-rel="popup" data-position-to="window" data-transition="pop">Trocar Colaborador</a></li>
+            <li><a href="#page-cancelar">Cancelar Vendas</a></li>
+            <li><a href="#modal-suporte" data-rel="popup" data-position-to="window" data-transition="pop">Suporte</a></li>
+            <li><a href="#modal-sistema" data-rel="popup" data-position-to="window" data-transition="pop">Sistema</a></li>
+            <li><a href="#modal-fechar" data-rel="popup" data-position-to="window" data-transition="pop">Fechar Caixa</a></li>
         </ul>
     </div>
 
     <div data-role="header" data-position="fixed">
+        <input type="search" name="pesquisar" id="pesquisar" value="" placeholder="Pesquisar" class="ui-input-search" data-mini="true" data-inline="true">
         <a href="#menu" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid">Menu</a>
-        <h1>Caixa</h1>
     </div>
 
     <div data-role="main" class="ui-content">
@@ -51,16 +51,21 @@
     </div>
 
     <div data-role="footer" data-position="fixed">
-        <span>TOTAL</span><span> R$ 600,00</span>
-            <a href="#page-pagamento" class="ui-btn ui-corner-all ui-shadow ui-icon-shop ui-btn-icon-right">Receber</a>
+        <a href="#page-pagamento" class="ui-btn ui-corner-all ui-shadow ui-icon-shop ui-btn-icon-left">Receber - R$ 600,00</a>
+        <a href="#modal-cliente" class="ui-btn ui-corner-all ui-shadow ui-icon-user ui-btn-icon-left" data-rel="popup" data-position-to="window" data-transition="pop">Avulso</a>
     </div>
 
     {% include "modal-medida.volt" %}
+    {% include "modal-cliente.volt" %}
+    {% include "modal-colaborador.volt" %}
+    {% include "modal-suporte.volt" %}
+    {% include "modal-sistema.volt" %}
+    {% include "modal-fechar.volt" %}
 </div>
 
 {% include "page-grupo.volt" %}
-
 {% include "page-pagamento.volt" %}
+{% include "page-cancelar.volt" %}
 
 </body>
 </html>

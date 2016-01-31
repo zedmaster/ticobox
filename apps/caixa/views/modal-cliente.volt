@@ -1,49 +1,15 @@
-<div id="modal-cliente" class="modal fade" role="dialog">
-    <div class="modal-dialog  modal-md">
+<div data-role="popup" id="modal-cliente" data-theme="a" class="ui-corner-all"  data-overlay-theme="a" data-theme="a">
+    <form>
+        <h3>Cliente</h3>
+        <form>
+            <input type="text" name="cpfcnpj" id="cpfcnpj" value="" placeholder="CPF/CNPJ">
+            <input type="text" name="email" id="email" value="" placeholder="E-mail">
+            <input type="text" name="nome" id="nome" value="" placeholder="Nome">
+        </form>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Cliente</h4>
-            </div>
-            <div class="modal-body">
-
-                <form class="modal-form">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="cpfcnpj" placeholder="CPF/CNPJ">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="email" class="form-control" id="email" placeholder="E-mail">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="nome" placeholder="Nome">
-                    </div>
-                </form>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary">Cadastrar</button>
-                </div>
-
-            </div>
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancelar</a>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-plus ui-btn-icon-right" data-rel="back">Adicionar</a>
         </div>
-
-    </div>
+    </form>
 </div>

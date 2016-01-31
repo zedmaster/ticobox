@@ -3,6 +3,15 @@
     padding: 0px;
 }
 
+/***** header *****/
+.ui-header .ui-input-search
+{
+    float:right;
+    margin-left: 90px;
+}
+
+
+
 
 /***** Popup *****/
 /* Alinhamento */
