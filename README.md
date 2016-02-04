@@ -15,9 +15,19 @@ Necessita de um servidor local ou na Internet.
 É desenvolvido para funcionar em equipamentos de baixa performance. 
 
 
+http://ticobox.com.br - Site
+
+http://teste.ticobox.com.br/caixa - Ambiente de teste do Caixa
+- **Usuário**: caixa@zed.net.br
+- **Senha**: 123
+
+
 ## Tecnologias
 - Servidor Linux
 - Linguagem PHP
 - Framework Phalcon
 - Framework jQuery Mobile
 - HTML 5
+
+
+
